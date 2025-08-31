@@ -1,0 +1,99 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #f1eceb; /* Seller-friendly orange */
+  color: rgb(15, 14, 14);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left: logo + menu */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  width: 120px;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.nav-menu li a {
+  color: rgb(16, 15, 15);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Right: AI Button + Search + Cart */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right input {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+/* AI Enhancer button */
+.btn-ai {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff; /* blue for AI */
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-ai:hover {
+  background-color: #0056b3;
+}
+
+/* Cart icon */
+.cart {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* hide menu on mobile, can use hamburger */
+  }
+
+  .nav-right input {
+    width: 100px;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+}

@@ -1,0 +1,145 @@
+/* Home.css */
+
+.home {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7); /* darken for text readability */
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 10px 25px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7f50;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ff5722;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #ff5722;
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.hero-stats div {
+  text-align: center;
+}
+
+.hero-stats strong {
+  font-size: 1.5rem;
+  display: block;
+}
+
+/* CTA Seller Section */
+.cta-seller {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  color: #222;
+}
+
+.cta-seller h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-seller p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-seller .btn-primary {
+  background-color: #28a745;
+  color: white;
+}
+
+.cta-seller .btn-primary:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,21 @@
+/* AI Enhancer Button */
+.btn-ai-enhancer {
+  padding: 10px 20px;
+  background-color: #007bff;  /* bright blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.btn-ai-enhancer:hover {
+  background-color: #0056b3;  /* darker blue on hover */
+}
+
+/* Optional: small shadow for 3D effect */
+.btn-ai-enhancer:active {
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
