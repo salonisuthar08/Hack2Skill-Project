@@ -9,6 +9,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 60px; /* Reduced from original height */
+  min-height: 60px;
 }
 
 /* Left: logo + menu */
@@ -81,6 +83,16 @@
 
 .cart:hover {
   transform: scale(1.1);
+}
+
+/* Adjustments for brand and nav items */
+.navbar-brand {
+  padding: 10px 15px; /* Adjust padding to match new height */
+}
+
+.navbar-nav > li > a {
+  padding-top: 20px;    /* Adjust padding to center items vertically */
+  padding-bottom: 20px;
 }
 
 /* Responsive */
