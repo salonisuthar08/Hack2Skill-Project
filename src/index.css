@@ -7,3 +7,245 @@ body {
 h1 {
   color: #333;
 }
+/* ArtisanAI Design System - Handcrafted meets Modern
+All colors MUST be HSL. Inspired by artisanal materials and warm textures.
+*/
+
+:root {
+  /* Core Brand Colors - Inspired by craft materials */
+  --background: 35 25% 96%; 
+  --foreground: 20 45% 18%;
+
+  /* Surface Colors */
+  --card: 40 30% 92%;        
+  --card-foreground: 30 15% 20%;
+
+  --popover: 45 25% 95%;
+  --popover-foreground: 30 15% 20%;
+
+  /* Brand Primary */
+  --primary: 20 45% 25%;     
+  --primary-foreground: 35 25% 96%;
+
+  /* Secondary */
+  --secondary: 35 45% 80%;   
+  --secondary-foreground: 30 15% 20%;
+
+  /* Accent */
+  --accent: 0 65% 50%;       
+  --accent-foreground: 35 25% 96%;
+
+  /* Trust Colors */
+  --trust-gold: 45 85% 65%;  
+  --trust-silver: 0 0% 70%;  
+  --trust-bronze: 30 45% 55%;
+
+  /* Muted Tones */
+  --muted: 40 20% 85%;       
+  --muted-foreground: 30 10% 50%;
+
+  /* System Colors */
+  --destructive: 0 65% 55%;
+  --destructive-foreground: 45 25% 95%;
+
+  --border: 35 25% 80%;      
+  --input: 40 25% 88%;       
+  --ring: 25 40% 35%;        
+
+  /* Design System Extensions */
+  --radius: 0.75rem;         
+  
+  /* Gradients */
+  --gradient-paper: linear-gradient(135deg, hsl(45 25% 95%), hsl(40 30% 92%));
+  --gradient-wood: linear-gradient(180deg, hsl(35 35% 80%), hsl(30 40% 75%));
+  --gradient-fabric: linear-gradient(45deg, hsl(40 20% 85%), hsl(35 25% 82%));
+  
+  /* Shadows */
+  --shadow-handmade: 0 4px 20px -4px hsl(30 15% 20% / 0.1), 
+                     0 2px 8px -2px hsl(30 15% 20% / 0.06);
+  --shadow-stamp: inset 0 2px 4px hsl(30 15% 20% / 0.1), 
+                  0 1px 2px hsl(30 15% 20% / 0.05);
+  --shadow-floating: 0 10px 30px -10px hsl(25 40% 35% / 0.2);
+  
+  /* Animations */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: serif;
+  background-image: 
+    radial-gradient(circle at 25% 25%, hsl(var(--accent) / 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, transparent 40%, hsl(35 20% 90% / 0.1) 70%, transparent);
+}
+
+/* Handmade Button Variants */
+.btn-artisan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: var(--shadow-handmade);
+  transition: var(--transition-smooth);
+}
+.btn-artisan:hover {
+  box-shadow: var(--shadow-floating);
+  transform: scale(1.05);
+}
+.btn-artisan:active {
+  transform: scale(0.95);
+}
+
+.btn-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  border: 2px solid hsl(var(--accent));
+  box-shadow: var(--shadow-stamp);
+  transition: var(--transition-bounce);
+}
+.btn-stamp:hover {
+  background-color: hsl(var(--accent) / 0.9);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Trust Badges */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: var(--transition-smooth);
+}
+
+.trust-gold {
+  background-color: hsl(var(--trust-gold));
+  color: #fff;
+  transform: rotate(-1deg);
+  box-shadow: 0 4px 15px -4px hsl(var(--trust-gold) / 0.4);
+}
+.trust-silver {
+  background-color: hsl(var(--trust-silver));
+  color: #fff;
+  transform: rotate(1deg);
+  box-shadow: 0 4px 15px -4px hsl(var(--trust-silver) / 0.4);
+}
+.trust-bronze {
+  background-color: hsl(var(--trust-bronze));
+  color: #fff;
+  transform: rotate(-0.5deg);
+  box-shadow: 0 4px 15px -4px hsl(var(--trust-bronze) / 0.4);
+}
+.trust-badge:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Paper Texture Cards */
+.card-paper {
+  position: relative;
+  background: var(--gradient-paper);
+  border-radius: 0.75rem;
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-handmade);
+  transition: var(--transition-smooth);
+  background-image: 
+    radial-gradient(circle at 25% 25%, hsl(40 15% 85% / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(35 20% 82% / 0.1) 0%, transparent 50%);
+}
+.card-paper:hover {
+  box-shadow: var(--shadow-floating);
+  transform: scale(1.02);
+}
+
+/* Text Effects */
+.handwritten {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+.elegant-serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* Ink Animation */
+.ink-reveal {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Elements */
+.float-gentle {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}

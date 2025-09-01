@@ -6,16 +6,29 @@ import Home from './components/Home/Home';
 import Features from './components/Features/features';
 import Footer from './components/Footer/Footer';
 import ProductUpload from './components/ProductUpload/ProductUpload';
+import './index.css';
+import RegisterSeller from './components/reg/reg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-     <Home/>
-     <Features/>
-        <ProductUpload />
-     <Footer/>
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Home />
+              <Features />
+              <ProductUpload />
+            </>
+          } />
+          <Route path="/register-seller" element={<RegisterSeller />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import homepage from '../../assets/bg.homemade.jpeg';
 import Navbar from '../Navbar/Navbar';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       <div className="hero">
         <img src={homepage} alt="Marketplace Banner" className='banner-img' />
         <div className="hero-content">
-          <h1>Sell Your Handcrafted Crafts</h1>
+          <p className='handwritten text-accent text-xl mb-4 ink-reveal'>Sell Your Handcrafted Crafts</p>
           <h2>Connect With Art Lovers Worldwide</h2>
           <p>
             Showcase your unique handmade creations and reach thousands of buyers. 
@@ -39,7 +40,7 @@ const Home = () => {
       <div className="cta-seller">
         <h3>Ready to Sell?</h3>
         <p>Sign up today and showcase your handmade crafts to a global audience.</p>
-        <button className="btn-primary">Register as Seller</button>
+        <Link to="/register-seller" className="btn-primary">Register as Seller</Link>
       </div>
     </div>
   );

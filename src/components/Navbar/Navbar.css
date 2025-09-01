@@ -109,3 +109,18 @@
     gap: 10px;
   }
 }
+/* ...existing code... */
+
+.nav-link {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #4CAF50;
+}
