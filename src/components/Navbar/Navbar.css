@@ -3,124 +3,205 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  background-color: #f1eceb; /* Seller-friendly orange */
-  color: rgb(15, 14, 14);
-  position: sticky;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 70px;
+  min-height: 70px;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
-  height: 60px; /* Reduced from original height */
-  min-height: 60px;
+}
+
+/* Add this to adjust the main content below navbar */
+body {
+  padding-top: 70px; /* Should match your navbar height */
 }
 
 /* Left: logo + menu */
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
-  width: 120px;
+  height: 65px;
+  width: auto;
   object-fit: contain;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
-  gap: 25px;
+  align-items: center;
 }
 
-.nav-menu li a {
-  color: rgb(16, 15, 15);
+.nav-link {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #4CAF50;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+  display: block;
+  transition: background-color 0.3s;
 }
 
-.nav-menu li a:hover {
-  text-decoration: underline;
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Right: AI Button + Search + Cart */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
-.nav-right input {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-}
-
-/* AI Enhancer button */
-.btn-ai {
-  padding: 8px 18px;
-  border: none;
-  border-radius: 6px;
-  background-color: #007bff; /* blue for AI */
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-ai:hover {
-  background-color: #0056b3;
+.search-container input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
 }
 
 /* Cart icon */
 .cart {
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
   transition: 0.3s;
-}
-
-.cart:hover {
-  transform: scale(1.1);
-}
-
-/* Adjustments for brand and nav items */
-.navbar-brand {
-  padding: 10px 15px; /* Adjust padding to match new height */
-}
-
-.navbar-nav > li > a {
-  padding-top: 20px;    /* Adjust padding to center items vertically */
-  padding-bottom: 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 100;
+  }
+
+  .nav-left {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 70%;
+    background-color: white;
+    flex-direction: column;
+    padding: 2rem;
+    transition: 0.3s;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-left.active {
+    left: 0;
+  }
+
   .nav-menu {
-    display: none; /* hide menu on mobile, can use hamburger */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
   }
 
-  .nav-right input {
-    width: 100px;
+  .dropdown {
+    width: 100%;
   }
 
-  .nav-right {
-    gap: 10px;
+  .dropdown-content {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background-color: #f5f5f5;
+    margin-left: 1rem;
+  }
+
+  .dropdown-content.active {
+    display: block;
+  }
+
+  .search-container input {
+    width: 150px;
+  }
+
+  .logo-container {
+    margin-bottom: 2rem;
+  }
+
+  body {
+    padding-top: 70px; /* Adjust if navbar height changes on mobile */
   }
 }
-/* ...existing code... */
 
-.nav-link {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  font-size: inherit;
-  padding: 8px 16px;
-  text-decoration: none;
-}
+@media (max-width: 480px) {
+  .search-container input {
+    width: 120px;
+  }
 
-.nav-link:hover {
-  color: #4CAF50;
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
 }

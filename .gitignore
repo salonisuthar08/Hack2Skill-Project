@@ -27,4 +27,13 @@ pnpm-debug.log*
 # OS generated files
 .DS_Store
 Thumbs.db
+# Firebase cache and local files
+.firebase/
+.firebaserc
+
+# Firebase functions dependencies (if you ever add cloud functions)
+functions/node_modules/
+
+# Logs and temp files
+*.log
 
