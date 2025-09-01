@@ -1,0 +1,142 @@
+/* Note: NO global styles like '*' or 'body' are here.
+   Those belong in a global file like src/index.css */
+
+/* Main Layout */
+.dashboardContainer {
+  display: flex;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: #1a202c; /* Darker sidebar */
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 24px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.sidebarHeading {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.navItem {
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navItem:hover {
+  background-color: #2d3748;
+}
+
+/* For showing the 'active' navigation item */
+.navItem.active {
+  background-color: #2b6cb0;
+  color: white;
+  font-weight: 600;
+}
+
+
+/* Main Content Area */
+.mainContent {
+  flex: 1; /* Takes up the remaining space */
+  padding: 32px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.headerTitle {
+  font-size: 2.5rem;
+  color: #1a202c;
+  font-weight: 700;
+}
+
+.headerSubtitle {
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.statCard {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+}
+
+.statIcon {
+  font-size: 2.5rem;
+  margin-right: 16px;
+  background-color: #edf2f7;
+  height: 60px;
+  width: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statTitle {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.statValue {
+  color: #1a202c;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Content Section */
+.contentSection {
+  margin-top: 48px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #1a202c;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.activityFeed p {
+  padding: 8px 0;
+  color: #4a5568;
+}
