@@ -76,6 +76,7 @@
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  gap: 16px; /* add vertical spacing between form rows */
 }
 
 .profileForm label {

@@ -75,6 +75,35 @@
   font-weight: 600;
 }
 
+/* Footer area styles */
+.sidebarFooter {
+  margin-top: auto;
+  padding: 0; /* let the button control its own padding for consistency */
+  border-top: 1px solid #2d3748;
+}
+
+.sidebarFooter .navItem {
+  width: 100%;
+  margin: 0;
+  padding: 16px 30px; /* match other items */
+  display: block;
+}
+
+/* Logout button styling to match theme */
+.logoutButton {
+  background: transparent;
+  border: none;
+  color: #f56565; /* red accent for logout */
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.logoutButton:hover {
+  background-color: #c53030; /* stronger red on hover */
+  color: #ffffff;
+}
+
 
 /* Main Content Area */
 .mainContent {

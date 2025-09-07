@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './SellerDashboard.module.css';
 import { Link, NavLink } from 'react-router-dom';
 import SellerLayout from './SellerLayout';
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
 
 
 
@@ -22,7 +23,20 @@ const StatCard = ({ title, value, icon }) => {
 
 // Main Artist Dashboard Component
 const SellerDashboard = () => {
-  const artistName = "Elena"; // The artist's name
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); // stores email, uid etc
+    });
+
+    return () => unsubscribe(); // cleanup
+  }, []);
+
+  if (!user) {
+    return <p>Loading...</p>; // while checking auth
+  }
 
   return (
     <SellerLayout>
@@ -30,7 +44,7 @@ const SellerDashboard = () => {
       <div>
         <header className={styles.header}>
           <h1 className={styles.headerTitle}>Creator Dashboard</h1>
-          <p className={styles.headerSubtitle}>Welcome back, {artistName}!</p>
+          <p className={styles.headerSubtitle}>Welcome back, {user.email.split("@")[0]}!</p>
         </header>
 
         {/* Grid for Artist's Statistics */}

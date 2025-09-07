@@ -1,8 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import SmartNavLink from '../common/SmartNavLink';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
 import styles from './SellerDashboard.module.css';
 
 function SellerLayout({ children }) {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    const confirmed = window.confirm('Are you sure you want to log out?');
+    if (!confirmed) return;
+    try {
+      await signOut(auth);
+      navigate('/', { replace: true });
+    } catch {
+      // Optional: surface error
+      alert('Failed to log out. Please try again.');
+    }
+  };
+
   return (
     <div className={styles.dashboardContainer}>
       <nav className={styles.sidebar}>
@@ -11,33 +28,35 @@ function SellerLayout({ children }) {
         </div>
         <ul className={styles.navList}>
           <li>
-            <NavLink to="/ArtistDashboard" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+            <SmartNavLink to="/ArtistDashboard" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
               Dashboard
-            </NavLink>
+            </SmartNavLink>
           </li>
           <li>
-            <NavLink to="/my-artworks" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+            <SmartNavLink to="/my-artworks" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
               My Artworks
-            </NavLink>
+            </SmartNavLink>
           </li>
           <li>
-            <NavLink to="/sales-history" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+            <SmartNavLink to="/sales-history" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
               Sales History
-            </NavLink>
+            </SmartNavLink>
           </li>
           <li>
-            <NavLink to="/upload-new-art" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+            <SmartNavLink to="/upload-new-art" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
               Upload New Art
-            </NavLink>
+            </SmartNavLink>
           </li>
           <li>
-            <NavLink to="/sellerprofile" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
+            <SmartNavLink to="/sellerprofile" className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}>
               Profile & Settings
-            </NavLink>
+            </SmartNavLink>
           </li>
         </ul>
         <div className={styles.sidebarFooter}>
-          <p>Logged in as Elena</p>
+          <button type="button" onClick={handleLogout} className={`${styles.navItem} ${styles.logoutButton}`}>
+            Logout
+          </button>
         </div>
       </nav>
 
