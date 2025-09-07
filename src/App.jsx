@@ -1,7 +1,6 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import React from "react";
 import Navbar from "./components/Navbar/Navbar";
+import SellerNavbar from "./components/Navbar/SellerNavbar";
 import Home from "./components/Home/Home";
 import Features from "./components/Features/features";
 import Footer from "./components/Footer/Footer";
@@ -10,8 +9,12 @@ import "./index.css";
 import RegisterSeller from "./components/Login/Artist";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BuyerLogin from "./components/Login/buyer";
-import ArtistDashboard from "./components/Artist/ArtistDashboard";
 import SellerDashboard from "./components/Profile/SellerDashboard";
+import SellerProfile from "./components/Profile/sellerProfile";
+import MyArtworks from "./components/Profile/MyArtworks";
+import SalesHistory from "./components/Profile/SalesHistory";
+import UploadNewArt from "./components/Profile/UploadNewArt";
+
 
 function App() {
   return (
@@ -50,12 +53,38 @@ function App() {
                 </>
               }
             />
-            <Route path="/ArtistDashboard" element={<SellerDashboard />} />
+            <Route path="/ArtistDashboard" element={<>
+              <SellerNavbar />
+              <SellerDashboard />
+              </>}
+               />
+            <Route path="/my-artworks" element={<>
+              <SellerNavbar />
+              <MyArtworks />
+            </>} />
+            <Route path="/sales-history" element={<>
+              <SellerNavbar />
+              <SalesHistory />
+            </>} />
+            <Route path="/upload-new-art" element={<>
+              <SellerNavbar />
+              <UploadNewArt />
+            </>} />
+            <Route
+              path="/sellerprofile"
+              element={
+                <>
+                  <SellerNavbar />
+                  <SellerProfile />
+                </>
+              }
+            />
           </Routes>
         </div>
       </Router>
     </>
   );
 }
+
 
 export default App;

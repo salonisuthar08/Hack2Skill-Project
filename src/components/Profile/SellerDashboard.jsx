@@ -1,8 +1,8 @@
 import React from 'react';
-
-// Step 1: Import the CSS Module file.
-// We'll call the imported object 'styles'.
 import styles from './SellerDashboard.module.css';
+import { Link, NavLink } from 'react-router-dom';
+import SellerLayout from './SellerLayout';
+
 
 
 
@@ -21,31 +21,13 @@ const StatCard = ({ title, value, icon }) => {
 };
 
 // Main Artist Dashboard Component
-const AdminDashboard = () => {
+const SellerDashboard = () => {
   const artistName = "Elena"; // The artist's name
 
   return (
-    <div className={styles.dashboardContainer}>
-      
-      {/* Sidebar Navigation */}
-      <nav className={styles.sidebar}>
-        <div className={styles.sidebarHeader}>
-          <h2 className={styles.sidebarHeading}>Creator Studio</h2>
-        </div>
-        <ul className={styles.navList}>
-          <li className={`${styles.navItem} ${styles.active}`}>Dashboard</li>
-          <li className={styles.navItem}>My Artworks</li>
-          <li className={styles.navItem}>Sales History</li>
-          <li className={styles.navItem}>Upload New Art</li>
-          <li className={styles.navItem}>Profile & Settings</li>
-        </ul>
-        <div className={styles.sidebarFooter}>
-          <p>Logged in as {artistName}</p>
-        </div>
-      </nav>
-
+    <SellerLayout>
       {/* Main Content Area */}
-      <main className={styles.mainContent}>
+      <div>
         <header className={styles.header}>
           <h1 className={styles.headerTitle}>Creator Dashboard</h1>
           <p className={styles.headerSubtitle}>Welcome back, {artistName}!</p>
@@ -68,11 +50,10 @@ const AdminDashboard = () => {
             <p><strong>'Monsoon Echoes'</strong> was sold to user 'gallery_owner'.</p>
           </div>
         </div>
-
-      </main>
-    </div>
+      </div>
+    </SellerLayout>
   );
 };
 
 
-export default AdminDashboard;
+export default SellerDashboard;

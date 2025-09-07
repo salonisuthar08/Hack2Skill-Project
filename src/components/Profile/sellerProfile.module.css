@@ -1,0 +1,109 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  font-family: system-ui, sans-serif;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: #1a202c; /* Darker sidebar */
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 24px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.sidebarHeading {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.navItem {
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Remove underline and keep color for links inside nav items */
+.navItem a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.navItem:hover {
+  background-color: #2d3748;
+}
+
+/* For showing the 'active' navigation item */
+.navItem.active {
+  background-color: #2b6cb0;
+  color: white;
+  font-weight: 600;
+}
+
+/* Standalone .active class for NavLink */
+.active {
+  background-color: #2b6cb0;
+  color: white;
+  font-weight: 600;
+}
+/* Main Profile */
+.profileContent {
+  flex: 1;
+  padding: 32px;
+}
+
+.profileContent h1 {
+  margin-bottom: 20px;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.profileForm label {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.profileForm input,
+.profileForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.profileForm button {
+  padding: 12px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.profileForm button:hover {
+  background: #2563eb;
+}
