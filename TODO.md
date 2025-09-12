@@ -1,0 +1,1 @@
+- [x] Update root README.md with comprehensive project overview, including description, features, tech stack, installation, and usage for both client and server.

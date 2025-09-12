@@ -39,7 +39,6 @@ Return plain text only, in this format:
 
 Option 1: <story text>
 Option 2: <story text>
-
 Description: "${userInput}"`,
                 },
               ],
