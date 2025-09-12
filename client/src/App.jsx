@@ -29,7 +29,8 @@ function App() {
                   <Navbar />
                   <Home />
                   <Features />
-                  <ProductUpload />
+                  <Footer />
+                  {/* <ProductUpload /> */}
                 </>
               }
             />
