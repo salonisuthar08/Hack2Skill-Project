@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="footer-col">
           <h3>Contact</h3>
           <p>Email: support@localcrafts.com</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Phone: +91 9555 99999</p>
         </div>
       </div>
 
