@@ -48,3 +48,4 @@ Thumbs.db
 # Firebase cache and local files
 # =========================
 .firebase/
+server/.env
