@@ -142,10 +142,6 @@ gen-ai-exchange/
 4. Push to the branch: `git push origin feature/your-feature-name`.
 5. Open a pull request.
 
-## License
-
-This project is licensed under the ISC License.
-
 ## Acknowledgments
 
 - Google Gemini for AI text enhancement.
