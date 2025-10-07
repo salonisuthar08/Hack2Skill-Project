@@ -28,6 +28,11 @@ A full-stack web application that serves as a marketplace for handmade crafts, c
 - **CORS**: Cross-Origin Resource Sharing for API access.
 - **dotenv**: Environment variable management.
 
+## 🌐 Live Demo
+
+Check out the live version of **Gen AI Exchange** here:  
+👉 [https://soulcraft25.netlify.app/](https://soulcraft25.netlify.app/)
+
 ## Project Structure
 
 ```
