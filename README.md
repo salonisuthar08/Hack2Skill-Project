@@ -28,6 +28,11 @@ A full-stack web application that serves as a marketplace for handmade crafts, c
 - **CORS**: Cross-Origin Resource Sharing for API access.
 - **dotenv**: Environment variable management.
 
+## 🌐 Live Demo
+
+Check out the live version of **Gen AI Exchange** here:  
+👉 [https://soulcraft25.netlify.app/](https://soulcraft25.netlify.app/)
+
 ## Project Structure
 
 ```
@@ -141,10 +146,6 @@ gen-ai-exchange/
 3. Commit your changes: `git commit -m 'Add some feature'`.
 4. Push to the branch: `git push origin feature/your-feature-name`.
 5. Open a pull request.
-
-## License
-
-This project is licensed under the ISC License.
 
 ## Acknowledgments
 
